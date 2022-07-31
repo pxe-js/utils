@@ -1,11 +1,12 @@
 {
     "name": "@pxe/utils",
-    "version": "1.0.0-alpha.3",
+    "version": "1.0.0-alpha.4",
     "description": "Utilities for PXE.js",
     "main": "index.js",
     "author": "reve-node",
     "license": "MIT",
     "devDependencies": {
+        "@pxe/router": "^1.0.0",
         "@pxe/server": "^1.0.9",
         "@types/node": "^18.0.0",
         "esbuild": "^0.14.47",
