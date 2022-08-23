@@ -5,7 +5,7 @@ import { Module } from "module";
 
 async function resolveImport(path: string) {
     const res = await import(path);
-    return res.default ?? res;
+    return res?.default || res;
 }
 
 /**
@@ -36,7 +36,7 @@ export async function routes(dir: string): Promise<Router[]> {
     for (const file of fs.readdirSync(dir)) {
         const filePath = path.resolve(dir, file);
 
-        if (filePath.endsWith("index.js"))
+        if (filePath.endsWith("index.js") || filePath.endsWith("index.mjs"))
             list.push(await resolveImport(dir));
         else if (fs.statSync(filePath).isDirectory())
             list.push(...routesSync(filePath));
