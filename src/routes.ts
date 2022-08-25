@@ -39,7 +39,7 @@ export async function routes(dir: string): Promise<Router[]> {
         if (filePath.endsWith("index.js") || filePath.endsWith("index.mjs"))
             list.push(await resolveImport(dir));
         else if (fs.statSync(filePath).isDirectory())
-            list.push(...routesSync(filePath));
+            list.push(...await routes(filePath));
     }
 
     return list;
