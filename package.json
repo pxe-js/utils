@@ -1,6 +1,6 @@
 {
     "name": "@pxe/utils",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Utilities for PXE.js",
     "main": "index.js",
     "author": "reve-node",
